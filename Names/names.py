@@ -24,6 +24,11 @@ users = {
  }
 
 def directory(list):
-    for k, v in list.items():
-        print v[0]
+    for type_of_user, user_names in list.iteritems():
+        print type_of_user
+        for name in user_names:
+            message = ''
+            for key, value in name.iteritems():
+                message += ' {}'.format(value).upper()
+            print message
 directory(users)
